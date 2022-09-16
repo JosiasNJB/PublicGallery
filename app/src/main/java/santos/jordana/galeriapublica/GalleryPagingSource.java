@@ -2,12 +2,19 @@ package santos.jordana.galeriapublica;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.paging.ListenableFuturePagingSource;
+import androidx.paging.PagingState;
+
+import com.google.common.util.concurrent.ListenableFuture;
+import com.google.common.util.concurrent.ListeningExecutorService;
+import com.google.common.util.concurrent.MoreExecutors;
 
 import java.io.FileNotFoundException;
 import java.util.List;
+import java.util.concurrent.Callable;
 import java.util.concurrent.Executors;
 
-public class GalleryPagingSource extends ListenableFuturePagingSource <Integer, ImageData> {
+public class GalleryPagingSource extends ListenableFuturePagingSource<Integer, ImageData> {
 
     GalleryRepository galleryRepository;
 

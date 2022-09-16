@@ -5,7 +5,10 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.paging.PagingData;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -47,7 +50,7 @@ public class GridViewFragment extends Fragment {
             }
         });
 
-        RecyclerView rvGallery = (RecyclerView) view.findViewById(R.id.rvList);
+        RecyclerView rvGallery = (RecyclerView) view.findViewById(R.id.rvGrid);
         rvGallery.setAdapter(gridAdapter);
         rvGallery.setLayoutManager(new GridLayoutManager(getContext()));
     }

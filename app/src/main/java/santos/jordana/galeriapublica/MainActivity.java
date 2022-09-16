@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import android.Manifest;
 import android.content.DialogInterface;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -84,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
             }
             else {
                 MainViewModel vm = new ViewModelProvider(this).get(MainViewModel.class);
-                navigationOpSelected = vm.getNavigationOpSelected();
+                int navigationOpSelected = vm.getNavigationOpSelected();
                 bottomNavigationView.setSelectedItemId(navigationOpSelected);
             }
 
@@ -128,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
         }
         else {
             MainViewModel vm = new ViewModelProvider(this).get(MainViewModel.class);
-            navigationOpSelected = vm.getNavigationOpSelected();
+            int navigationOpSelected = vm.getNavigationOpSelected();
             bottomNavigationView.setSelectedItemId(navigationOpSelected);
         }
 
