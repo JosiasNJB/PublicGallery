@@ -50,7 +50,7 @@ public class ListViewFragment extends Fragment {
             }
         });
 
-        RecyclerView rvGallery = (RecyclerView) view.findViewById(R.id.rvList);
+        RecyclerView rvGallery = (RecyclerView) view.findViewById(R.id.rvGrid);
         rvGallery.setAdapter(listAdapter);
         rvGallery.setLayoutManager(new LinearLayoutManager(getContext()));
     }

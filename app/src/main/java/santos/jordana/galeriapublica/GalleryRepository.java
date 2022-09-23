@@ -86,7 +86,7 @@ public class GalleryRepository {
             String name = cursor.getString(nameColumn);
             int dateAdded = cursor.getInt(dateAddedColumn);
             int size = cursor.getInt(sizeColumn);
-            Bitmap thumb = Util.getBitmap(context, contentUri, w, h);
+            Bitmap thumb = santos.jordana.galeriapublica.Util.getBitmap(context, contentUri, w, h);
 
             // Stores column values and the contentUri in a local object
             // that represents the media file.
