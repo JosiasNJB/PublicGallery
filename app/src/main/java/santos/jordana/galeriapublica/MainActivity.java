@@ -24,7 +24,6 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
-    Fragment fragment;
 
     static int RESULT_REQUEST_PERMISSION = 2;
 
@@ -88,7 +87,6 @@ public class MainActivity extends AppCompatActivity {
                 int navigationOpSelected = vm.getNavigationOpSelected();
                 bottomNavigationView.setSelectedItemId(navigationOpSelected);
             }
-
         }
     }
 
@@ -105,7 +103,6 @@ public class MainActivity extends AppCompatActivity {
 
         final List<String> permissionsRejected = new ArrayList<>();
         if(requestCode == RESULT_REQUEST_PERMISSION) {
-
             for(String permission : permissions) {
                 if(!hasPermission(permission)) {
                     permissionsRejected.add(permission);
@@ -119,11 +116,11 @@ public class MainActivity extends AppCompatActivity {
                     new AlertDialog.Builder(MainActivity.this).
                             setMessage("Para usar essa app é preciso conceder essas permissões").
                             setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    requestPermissions(permissionsRejected.toArray(new String[permissionsRejected.size()]), RESULT_REQUEST_PERMISSION);
-                                }
-                            }).create().show();
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            requestPermissions(permissionsRejected.toArray(new String[permissionsRejected.size()]), RESULT_REQUEST_PERMISSION);
+                        }
+                    }).create().show();
                 }
             }
         }
@@ -132,8 +129,5 @@ public class MainActivity extends AppCompatActivity {
             int navigationOpSelected = vm.getNavigationOpSelected();
             bottomNavigationView.setSelectedItemId(navigationOpSelected);
         }
-
     }
-
-
 }
