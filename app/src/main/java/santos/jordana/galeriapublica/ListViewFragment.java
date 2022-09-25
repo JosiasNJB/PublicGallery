@@ -26,15 +26,12 @@ public class ListViewFragment extends Fragment {
     private MainViewModel mViewModel;
     private View view;
 
-    public static ListViewFragment newInstance() {
-        return new ListViewFragment();
+    public ListViewFragment() {
+        // Required empty public constructor
     }
 
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_list_view, container, false);
-        return view;
+    public static ListViewFragment newInstance() {
+        return new ListViewFragment();
     }
 
     @Override
@@ -55,4 +52,10 @@ public class ListViewFragment extends Fragment {
         rvGallery.setLayoutManager(new LinearLayoutManager(getContext()));
     }
 
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
+        view = inflater.inflate(R.layout.fragment_list_view, container, false);
+        return view;
+    }
 }

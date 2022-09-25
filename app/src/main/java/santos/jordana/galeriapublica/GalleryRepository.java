@@ -16,6 +16,7 @@ import java.util.Date;
 import java.util.List;
 
 public class GalleryRepository {
+
     Context context;
 
     public GalleryRepository(Context context) {
@@ -94,5 +95,4 @@ public class GalleryRepository {
         }
         return imageDataList;
     }
-
 }

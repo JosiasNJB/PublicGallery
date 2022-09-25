@@ -15,7 +15,6 @@ import java.text.SimpleDateFormat;
 
 public class GridAdapter extends PagingDataAdapter<ImageData, MyViewHolder> {
 
-
     public GridAdapter(@NonNull DiffUtil.ItemCallback<ImageData> diffCallback) {
         super(diffCallback);
     }
@@ -32,16 +31,6 @@ public class GridAdapter extends PagingDataAdapter<ImageData, MyViewHolder> {
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
         ImageData imageData = getItem(position);
-/*
-        TextView tvName = holder.itemView.findViewById(R.id.tvName);
-        tvName.setText(imageData.fileName);
-
-        TextView tvDate = holder.itemView.findViewById(R.id.tvDate);
-        tvDate.setText("Data: " + new SimpleDateFormat("HH:mm dd/MM/yyyy").format(imageData.date));
-
-        TextView tvSize = holder.itemView.findViewById(R.id.tvSize);
-        tvSize.setText("Tamanho: " + String.valueOf(imageData.size));
-*/
 
         Bitmap thumb = imageData.thumb;
         ImageView imageView = holder.itemView.findViewById(R.id.imThumb);

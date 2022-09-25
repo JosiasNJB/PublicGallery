@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
 
-    static int RESULT_REQUEST_PERMISSION = 2;
+    static int RESULT_REQUEST_PERMISSION = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +69,13 @@ public class MainActivity extends AppCompatActivity {
         checkForPermissions(permissions);
     }
 
+    private boolean hasPermission(String permission) {
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            return ActivityCompat.checkSelfPermission(MainActivity.this, permission) == PackageManager.PERMISSION_GRANTED;
+        }
+        return false;
+    }
+
     private void checkForPermissions(List<String> permissions) {
         List<String> permissionsNotGranted = new ArrayList<>();
 
@@ -88,13 +95,6 @@ public class MainActivity extends AppCompatActivity {
                 bottomNavigationView.setSelectedItemId(navigationOpSelected);
             }
         }
-    }
-
-    private boolean hasPermission(String permission) {
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            return ActivityCompat.checkSelfPermission(MainActivity.this, permission) == PackageManager.PERMISSION_GRANTED;
-        }
-        return false;
     }
 
     @Override

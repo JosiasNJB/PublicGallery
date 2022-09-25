@@ -26,15 +26,12 @@ public class GridViewFragment extends Fragment {
     private MainViewModel mViewModel;
     private View view;
 
-    public static GridViewFragment newInstance() {
-        return new GridViewFragment();
+    public GridViewFragment() {
+        // Required empty public constructor
     }
 
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_grid_view, container, false);
-        return view;
+    public static GridViewFragment newInstance() {
+        return new GridViewFragment();
     }
 
     @Override
@@ -50,12 +47,17 @@ public class GridViewFragment extends Fragment {
             }
         });
 
-
         RecyclerView rvGallery = (RecyclerView) view.findViewById(R.id.rvGrid);
         rvGallery.setAdapter(gridAdapter);
         float w = getResources().getDimension(R.dimen.im_width);
         int numberOfColumns = Utils.calculateNoOfColumns(getContext(), w);
         rvGallery.setLayoutManager(new GridLayoutManager(getContext(), numberOfColumns));
+    }
 
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
+        view = inflater.inflate(R.layout.fragment_grid_view, container, false);
+        return view;
     }
 }
