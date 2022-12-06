@@ -1,4 +1,4 @@
-package santos.jordana.galeriapublica;
+package neves.josias.publicgallery;
 
 import android.graphics.Bitmap;
 import android.net.Uri;

@@ -1,4 +1,4 @@
-package santos.jordana.galeriapublica;
+package neves.josias.publicgallery;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

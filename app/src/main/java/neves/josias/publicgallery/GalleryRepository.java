@@ -1,4 +1,4 @@
-package santos.jordana.galeriapublica;
+package neves.josias.publicgallery;
 
 import android.content.ContentResolver;
 import android.content.ContentUris;
